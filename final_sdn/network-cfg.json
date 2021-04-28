@@ -1,0 +1,59 @@
+{
+	"ports" : {
+		"of:0000ae5d32ce3d42/1" : {
+			"interfaces" : [
+				{
+					"name" : "ovs1",
+					"ips" : [ "172.22.0.100/16" ],
+					"mac" : "02:42:ac:1e:00:03"
+				}
+			]
+		},
+		"of:000022b74fa8d04c/1" : {
+			"interfaces" : [
+				{
+					"name" : "ovs2",
+					"ips" : [ "172.23.0.100/16" ],
+					"mac" : "02:42:ac:1e:00:03"
+				}
+			]
+		},
+		"of:0000a2d7d8dd7243/1" : {
+			"interfaces" : [
+				{
+					"name" : "ovs3",
+					"ips" : [ "172.24.0.100/16" ],
+					"mac" : "02:42:ac:1e:00:03"
+				}
+			]
+		},
+		"of:000086e2c448fd43/1" : {
+			"interfaces" : [
+				{
+					"name" : "ovs4",
+					"ips" : [ "172.25.0.100/16" ],
+					"mac" : "02:42:ac:1e:00:03"
+				}
+			]
+		}
+	},
+	"apps" : {
+		"org.onosproject.router" : {
+			"bgp" : {
+				"bgpSpeakers" : [
+					{
+						"name" : "speaker",
+						"connectPoint" : "of:0000ae5d32ce3d42/4",
+						"peers" : [
+							"172.22.0.2",
+							"172.23.0.2",
+							"172.24.0.2",
+							"172.25.0.2"
+						]
+					}
+				]
+			}
+		}
+	}
+}
+
